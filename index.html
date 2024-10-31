@@ -1,23 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
 </head>
-<body>
+
+<body style="background-color: green; width:100%;">
+
+  <!-- Finally, give your body tag a nice background image using the background.jpg file. Position the background image to the bottom center so that we see more of the grass and make sure it doesn't repeat. Add a green background color. -->
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <figure>
+      <figcaption>Audio:</figcaption>
+      <audio controls src="/assets/audio/piano.wav"></audio>
+      <a href="/assets/audio/piano.wav"> Download audio </a>
+    </figure>
 
     <!-- VIDEO HTML GOES HERE -->
+    <figure>
+      <figcaption>Video:</figcaption>
+      <video controls src="/assets/video/ocean.mp4" width="640" height="480"></video>
+      <a href="/assets/video/ocean.mp4"> Download video </a>
+    </figure>
 
     <!-- IMAGE MAP HTML GOES HERE-->
-
+    <map name="media" width="600px">
+      <area shape="rect" coords="0,0,350,500" alt="Lavandula" href="https://en.wikipedia.org/wiki/Lavandula">
+      <area shape="rect" coords="400,190,650,400" alt="Orange" href="https://en.wikipedia.org/wiki/Orange_(fruit)"
+        style="cursor:copy">
+      <area shape="circle" coords="500,0,0,100" alt="Coffee" href="https://en.wikipedia.org/wiki/Coffee">
+    </map>
+    <img src="/assets/images/fruit_table.jpg" usemap="#media" width="640" height="480" style="cursor:grabbing">
     <!-- CANVAS HTML GOES HERE -->
-  </div>
 
+    <figure>
+      <figcaption>Canvas:</figcaption>
+      <canvas id="canvas"></canvas>
+    </figure>
+    <img src="/assets/images/background.jpg" style="background-position: bottom center; background-repeat: no-repeat;"
+      width="640" height="480">
+  </div>
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('canvas');
+    const colors = ['red', 'purple', 'blue', 'yellow'];
+
+    canvas.width = 400;
+    canvas.height = 400;
+
+    const context = canvas.getContext('2d');
+
+    canvas.style.borderTop = `3px solid ${colors.pop()}`;
+    canvas.style.borderLeft = `3px solid ${colors.pop()}`;
+    canvas.style.borderRight = `3px solid ${colors.pop()}`;
+    canvas.style.borderBottom = `3px solid ${colors.pop()}`;
+
+
   </script>
 </body>
+
 </html>
